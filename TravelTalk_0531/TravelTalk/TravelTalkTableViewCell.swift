@@ -20,8 +20,33 @@ class TravelTalkTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
 
+        configureUI()
         
     }
+    
+    func configureCell(chatRoom: ChatRoom, chat: Chat ) {
+        
+        profileImageView.image = UIImage(named:chat.user.profileImage )
+        nameLabel.text = chat.user.rawValue
+        contentsLabel.text = chat.message
+        let dateformatter = DateFormatter()
+        dateformatter.dateFormat = "yy.MM.dd"
+        
+        dateLabel.text = chat.date
+    }
+    
+    func configureUI() {
+        profileImageView.contentMode = .scaleAspectFill
+        nameLabel.font = .boldSystemFont(ofSize: 17)
+        
+        contentsLabel.font = .systemFont(ofSize: 15)
+        contentsLabel.textColor = .darkGray
+        dateLabel.font = .systemFont(ofSize: 13)
+        dateLabel.textColor = .lightGray
+        
+    }
+    
+    
     
     override func layoutSubviews() {
         super.layoutSubviews()
@@ -29,3 +54,4 @@ class TravelTalkTableViewCell: UITableViewCell {
     }
     
 }
+

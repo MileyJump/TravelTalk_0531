@@ -9,10 +9,13 @@ import UIKit
 
 class TravelTalkViewController: UIViewController {
     
+    
+    
     @IBOutlet var searchBackView: UIView!
     @IBOutlet var searchTextField: UITextField!
-    
     @IBOutlet var travelTalkTableView: UITableView!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         configureUI()
@@ -39,14 +42,22 @@ class TravelTalkViewController: UIViewController {
 
 extension TravelTalkViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 15
+        return mockChatList.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: TravelTalkTableViewCell.identifier, for: indexPath) as! TravelTalkTableViewCell
         
+        let chatRomm = mockChatList[indexPath.row]
+        if let lastChat = chatRomm.chatList.last {
+            cell.configureCell(chatRoom: chatRomm, chat: lastChat)
+        }
         return cell
     }
+    
+//    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+//        <#code#>
+//    }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return UITableView.automaticDimension
