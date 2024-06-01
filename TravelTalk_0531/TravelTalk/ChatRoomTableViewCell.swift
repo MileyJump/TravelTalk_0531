@@ -25,7 +25,7 @@ class ChatRoomTableViewCell: UITableViewCell {
     }
     
     func configureUI() {
-//        profileImageView.contentMode = .scaleAspectFill
+        //        profileImageView.contentMode = .scaleAspectFill
         profileNameLabel.font = .boldSystemFont(ofSize: 17)
         
         chatLabel.font = .systemFont(ofSize: 15)
@@ -34,6 +34,11 @@ class ChatRoomTableViewCell: UITableViewCell {
         userCountLabel.font = .systemFont(ofSize: 15)
         timeLabel.font = .systemFont(ofSize: 13)
         timeLabel.textColor = .lightGray
+        
+        firstProfileImageView.contentMode = .scaleAspectFill
+        secondProfileImageView.contentMode = .scaleAspectFill
+        thirdProfileImageView.contentMode = .scaleAspectFill
+        fourthProfileImageView.contentMode = .scaleAspectFill
         
     }
     
@@ -46,12 +51,26 @@ class ChatRoomTableViewCell: UITableViewCell {
         chatLabel.text = chat.message
         timeLabel.text = chat.date
         
-//        if let imageName = chatRoom.chatroomImage.first {
-//            firstProfileImageView.image = UIImage(systemName: imageName)
-//        } else {
-//            print("없어")
-//        }
+        let imageName = chatRoom.chatroomImage
+        firstProfileImageView.image = UIImage(named: imageName[0])
+        secondProfileImageView.image = UIImage(named: imageName[1])
+        thirdProfileImageView.image = UIImage(named: imageName[2])
+        fourthProfileImageView.image = UIImage(named: imageName[3])
+        
     }
     
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        
+        //        firstProfileImageView.layer.cornerRadius = 8
+        firstProfileImageView.layer.cornerRadius = firstProfileImageView.frame.height / 2
+        //        secondProfileImageView.layer.cornerRadius = 8
+        secondProfileImageView.layer.cornerRadius = firstProfileImageView.frame.height / 2
+        thirdProfileImageView.layer.cornerRadius = firstProfileImageView.frame.height / 2
+        //        thirdProfileImageView.layer.cornerRadius = 8
+        fourthProfileImageView.layer.cornerRadius = firstProfileImageView.frame.height / 2
+        //        fourthProfileImageView.layer.cornerRadius = 8
+        
+    }
     
 }
