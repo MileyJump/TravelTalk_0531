@@ -73,6 +73,73 @@
             </objects>
             <point key="canvasLocation" x="980.91603053435108" y="-34.507042253521128"/>
         </scene>
+        <!--Chatting View Controller-->
+        <scene sceneID="iI1-D0-Sbu">
+            <objects>
+                <viewController storyboardIdentifier="ChattingViewController" id="Atz-0j-CeD" customClass="ChattingViewController" customModule="TravelTalk_0531" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="rYN-Yo-jlu">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="tpj-lO-c1m">
+                                <rect key="frame" x="0.0" y="103" width="393" height="651"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XPM-9D-0vW">
+                                <rect key="frame" x="16" y="754" width="361" height="80"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="paperplane" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="kwW-te-jol">
+                                        <rect key="frame" x="308" y="8.9999999999999964" width="45" height="44.333333333333329"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="45" id="p4I-Yi-c3m"/>
+                                            <constraint firstAttribute="width" secondItem="kwW-te-jol" secondAttribute="height" id="tfU-Be-KBB"/>
+                                        </constraints>
+                                    </imageView>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="efI-MG-yzK">
+                                        <rect key="frame" x="8" y="4" width="300" height="72"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                        <color key="textColor" systemColor="labelColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                </subviews>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="80" id="DJK-mV-7YC"/>
+                                    <constraint firstItem="kwW-te-jol" firstAttribute="leading" secondItem="efI-MG-yzK" secondAttribute="trailing" id="N5Z-JB-8ZW"/>
+                                    <constraint firstItem="efI-MG-yzK" firstAttribute="leading" secondItem="XPM-9D-0vW" secondAttribute="leading" constant="8" id="YX7-D7-ZOc"/>
+                                    <constraint firstAttribute="trailing" secondItem="kwW-te-jol" secondAttribute="trailing" constant="8" id="dcr-pA-IVS"/>
+                                    <constraint firstItem="efI-MG-yzK" firstAttribute="top" secondItem="XPM-9D-0vW" secondAttribute="top" constant="4" id="lJP-pq-dtI"/>
+                                    <constraint firstAttribute="bottom" secondItem="efI-MG-yzK" secondAttribute="bottom" constant="4" id="ndE-C7-R65"/>
+                                    <constraint firstItem="kwW-te-jol" firstAttribute="top" secondItem="XPM-9D-0vW" secondAttribute="top" constant="8" id="o6m-zU-GZb"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="XPn-X9-053"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="XPn-X9-053" firstAttribute="trailing" secondItem="tpj-lO-c1m" secondAttribute="trailing" id="0xT-4i-IUq"/>
+                            <constraint firstItem="tpj-lO-c1m" firstAttribute="leading" secondItem="XPn-X9-053" secondAttribute="leading" id="MeJ-7R-prU"/>
+                            <constraint firstItem="XPM-9D-0vW" firstAttribute="leading" secondItem="XPn-X9-053" secondAttribute="leading" constant="16" id="NRw-D1-kza"/>
+                            <constraint firstItem="tpj-lO-c1m" firstAttribute="top" secondItem="XPn-X9-053" secondAttribute="top" id="Y22-r4-sEw"/>
+                            <constraint firstAttribute="bottom" secondItem="XPM-9D-0vW" secondAttribute="bottom" constant="18" id="YX7-ow-wYO"/>
+                            <constraint firstItem="XPM-9D-0vW" firstAttribute="top" secondItem="tpj-lO-c1m" secondAttribute="bottom" id="gjG-TY-fMZ"/>
+                            <constraint firstItem="XPn-X9-053" firstAttribute="trailing" secondItem="XPM-9D-0vW" secondAttribute="trailing" constant="16" id="jMl-Ez-MV5"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="XKi-oG-7am"/>
+                    <connections>
+                        <outlet property="chatBackView" destination="XPM-9D-0vW" id="Xyp-LP-CEK"/>
+                        <outlet property="chatTableView" destination="tpj-lO-c1m" id="r78-mm-XUy"/>
+                        <outlet property="chatTextView" destination="efI-MG-yzK" id="74U-eK-ogX"/>
+                        <outlet property="sendButton" destination="kwW-te-jol" id="5JM-g0-TBu"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sQR-Ti-Crc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3193.1297709923665" y="-19.014084507042256"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="ctQ-kX-Wa5">
             <objects>
@@ -91,9 +158,31 @@
             </objects>
             <point key="canvasLocation" x="54.198473282442748" y="-34.507042253521128"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="ypb-g0-meZ">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="5DM-WY-uIx" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="FmG-FA-dTo">
+                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Atz-0j-CeD" kind="relationship" relationship="rootViewController" id="JDU-LA-8u5"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="r52-lI-jhF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2266.4122137404579" y="-19.014084507042256"/>
+        </scene>
     </scenes>
     <resources>
         <image name="magnifyingglass" catalog="system" width="128" height="117"/>
+        <image name="paperplane" catalog="system" width="128" height="119"/>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

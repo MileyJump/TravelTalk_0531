@@ -14,7 +14,7 @@ protocol ReuseIdentifierProtocol {
 }
 
 
-extension ViewController: ReuseIdentifierProtocol {
+extension UIViewController: ReuseIdentifierProtocol {
     static var identifier: String {
         return String(describing: self)
     }
