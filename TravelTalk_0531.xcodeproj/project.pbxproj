@@ -23,6 +23,8 @@
 		B09809D52C0A30DC0039F399 /* TravelTalkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B09809D42C0A30DC0039F399 /* TravelTalkViewController.swift */; };
 		B0A1BC002C0B2C66006E0251 /* UserChattingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0A1BBFE2C0B2C66006E0251 /* UserChattingTableViewCell.swift */; };
 		B0A1BC012C0B2C66006E0251 /* UserChattingTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B0A1BBFF2C0B2C66006E0251 /* UserChattingTableViewCell.xib */; };
+		B0A1BC032C0B31F8006E0251 /* UIViewContoller+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0A1BC022C0B31F8006E0251 /* UIViewContoller+Extension.swift */; };
+		B0A1BC052C0B361D006E0251 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0A1BC042C0B361D006E0251 /* UIView+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +46,8 @@
 		B09809D42C0A30DC0039F399 /* TravelTalkViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravelTalkViewController.swift; sourceTree = "<group>"; };
 		B0A1BBFE2C0B2C66006E0251 /* UserChattingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserChattingTableViewCell.swift; sourceTree = "<group>"; };
 		B0A1BBFF2C0B2C66006E0251 /* UserChattingTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserChattingTableViewCell.xib; sourceTree = "<group>"; };
+		B0A1BC022C0B31F8006E0251 /* UIViewContoller+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewContoller+Extension.swift"; sourceTree = "<group>"; };
+		B0A1BC042C0B361D006E0251 /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +65,8 @@
 			isa = PBXGroup;
 			children = (
 				B07483CD2C0A363500E09147 /* ReuseIdentifierProtocol.swift */,
+				B0A1BC022C0B31F8006E0251 /* UIViewContoller+Extension.swift */,
+				B0A1BC042C0B361D006E0251 /* UIView+Extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -191,7 +197,9 @@
 				B09809C32C0A2B790039F399 /* ViewController.swift in Sources */,
 				B0393EE72C0B094C0086831B /* ChattingTableViewCell.swift in Sources */,
 				B09809D32C0A30910039F399 /* ChattingData.swift in Sources */,
+				B0A1BC032C0B31F8006E0251 /* UIViewContoller+Extension.swift in Sources */,
 				B09809D52C0A30DC0039F399 /* TravelTalkViewController.swift in Sources */,
+				B0A1BC052C0B361D006E0251 /* UIView+Extension.swift in Sources */,
 				B09809BF2C0A2B790039F399 /* AppDelegate.swift in Sources */,
 				B0A1BC002C0B2C66006E0251 /* UserChattingTableViewCell.swift in Sources */,
 				B07483CE2C0A363500E09147 /* ReuseIdentifierProtocol.swift in Sources */,

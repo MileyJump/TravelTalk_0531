@@ -8,16 +8,35 @@
 import UIKit
 
 class UserChattingTableViewCell: UITableViewCell {
-
+    
+    @IBOutlet var ChatLabelBackView: UIView!
+    
+    @IBOutlet var chatLabel: UILabel!
+    
+    @IBOutlet var timeLabel: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        configureUI()
+    }
+    
+    func configureUI() {
+        ChatLabelBackView.configureUIView(borderColorname: UIColor.darkGray.cgColor, borderWidthSize: 1, cornerRadiusSize: 8, backColor: .lightGray.withAlphaComponent(0.3))
+        
+        chatLabel.numberOfLines = 0
+        chatLabel.font = .systemFont(ofSize: 15)
+        
+        timeLabel.font = .systemFont(ofSize: 12)
+        timeLabel.textColor = .darkGray
+        
     }
 
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+    func configureCell(chatRoom: ChatRoom, chat: Chat) {
+        
+        timeLabel.text = chat.date
+        
+        chatLabel.text = chat.message
+        
     }
     
 }

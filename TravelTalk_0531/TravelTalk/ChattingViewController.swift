@@ -36,10 +36,9 @@ class ChattingViewController: UIViewController {
         chatTextView.backgroundColor = .clear
         chatBackView.backgroundColor = .lightGray.withAlphaComponent(0.1)
         chatBackView.layer.cornerRadius = 8
-        
-        
-        let xib = UINib(nibName: ChattingTableViewCell.identifier, bundle: nil)
-        chatTableView.register(xib, forCellReuseIdentifier: ChattingTableViewCell.identifier)
+          
+        tableViweRegister(identifier: ChattingTableViewCell.identifier, tableName: chatTableView)
+        tableViweRegister(identifier: UserChattingTableViewCell.identifier, tableName: chatTableView)
         
         navigationItem.title = chatRoom?.chatroomName
         
@@ -59,12 +58,19 @@ extension ChattingViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: ChattingTableViewCell.identifier, for: indexPath) as! ChattingTableViewCell
-        guard let chatRoom = chatRoom else { return cell }
-        cell.configureCell(chatRoom: chatRoom, chat: chat[indexPath.row])
         
-        return cell
-        
+        if chatRoom?.chatList[indexPath.row].user == .user {
+            let userCell = tableView.dequeueReusableCell(withIdentifier: UserChattingTableViewCell.identifier, for: indexPath) as! UserChattingTableViewCell
+            guard let chatRoom = chatRoom else { return userCell }
+            userCell.configureCell(chatRoom: chatRoom, chat: chat[indexPath.row])
+            return userCell
+        } else {
+            let cell = tableView.dequeueReusableCell(withIdentifier: ChattingTableViewCell.identifier, for: indexPath) as! ChattingTableViewCell
+            guard let chatRoom = chatRoom else { return cell }
+            cell.configureCell(chatRoom: chatRoom, chat: chat[indexPath.row])
+            
+            return cell
+        }
     }
     
     

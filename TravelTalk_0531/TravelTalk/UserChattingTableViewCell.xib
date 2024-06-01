@@ -55,6 +55,11 @@
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="ChatLabelBackView" destination="DAN-P8-aOS" id="zkd-ut-8uh"/>
+                <outlet property="chatLabel" destination="R49-lB-QbG" id="a13-CD-Bnt"/>
+                <outlet property="timeLabel" destination="hp2-mv-kgk" id="zr3-we-Lw8"/>
+            </connections>
             <point key="canvasLocation" x="10.687022900763358" y="13.732394366197184"/>
         </tableViewCell>
     </objects>
