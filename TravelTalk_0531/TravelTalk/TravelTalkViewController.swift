@@ -32,8 +32,9 @@ class TravelTalkViewController: UIViewController {
         searchTextField.backgroundColor = .clear
         searchTextField.borderStyle = .none
         
-        let xib = UINib(nibName: TravelTalkTableViewCell.identifier, bundle: nil)
-        travelTalkTableView.register(xib, forCellReuseIdentifier: TravelTalkTableViewCell.identifier)
+        // 테이블뷰에 셀 등록
+        tableViweRegister(identifier: TravelTalkTableViewCell.identifier, tableName: travelTalkTableView)
+        tableViweRegister(identifier: ChatRoomTableViewCell.identifier, tableName: travelTalkTableView)
         
         travelTalkTableView.dataSource = self
         travelTalkTableView.delegate = self
@@ -55,14 +56,29 @@ extension TravelTalkViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: TravelTalkTableViewCell.identifier, for: indexPath) as! TravelTalkTableViewCell
-        
-        let chatRomm = mockChatList[indexPath.row]
-        if let lastChat = chatRomm.chatList.last {
-            cell.configureCell(chatRoom: chatRomm, chat: lastChat)
-        }
-        return cell
-    }
+        let chatroomCount = mockChatList[indexPath.row].chatroomImage.count
+          if chatroomCount > 1 {
+              let roomCell = tableView.dequeueReusableCell(withIdentifier: ChatRoomTableViewCell.identifier, for: indexPath) as! ChatRoomTableViewCell
+              
+              let chatRoom = mockChatList[indexPath.row]
+              guard let chatData = chatRoom.chatList.last else { return roomCell }
+              roomCell.configureCell(chatRoom: chatRoom, chat: chatData)
+              
+              roomCell.selectionStyle = .none // 셀 선택 시 회색 하이라이트 제거
+              // roomCell을 설정하는 추가 코드
+              return roomCell
+          } else {
+              let chatCell = tableView.dequeueReusableCell(withIdentifier: TravelTalkTableViewCell.identifier, for: indexPath) as! TravelTalkTableViewCell
+              let chatRoom = mockChatList[indexPath.row]
+              guard let lastChat = chatRoom.chatList.last else { return chatCell }
+              chatCell.configureCell(chatRoom: chatRoom, chat: lastChat)
+              chatCell.selectionStyle = .none // 셀 선택 시 회색 하이라이트 제거
+              // userCell을 설정하는 추가 코드
+              return chatCell
+          }
+      }
+ 
+
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         

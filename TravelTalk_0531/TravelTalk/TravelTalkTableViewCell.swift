@@ -29,8 +29,8 @@ class TravelTalkTableViewCell: UITableViewCell {
         profileImageView.image = UIImage(named:chat.user.profileImage )
         nameLabel.text = chat.user.rawValue
         contentsLabel.text = chat.message
-        let dateformatter = DateFormatter()
-        dateformatter.dateFormat = "yy.MM.dd"
+//        let dateformatter = DateFormatter()
+//        dateformatter.dateFormat = "yy.MM.dd"
         
         dateLabel.text = chat.date
     }

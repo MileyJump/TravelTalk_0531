@@ -77,11 +77,6 @@ extension ChattingViewController: UITableViewDelegate, UITableViewDataSource {
             return cell
         }
     }
-    
-    
-    
-    
-    
 }
 
 extension ChattingViewController: UITextViewDelegate {
