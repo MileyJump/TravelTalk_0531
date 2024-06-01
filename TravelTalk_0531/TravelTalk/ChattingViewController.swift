@@ -28,14 +28,21 @@ class ChattingViewController: UIViewController {
     func configureUI() {
         chatTableView.dataSource = self
         chatTableView.delegate = self
+        chatTableView.separatorStyle = .none
         
         let placeholder = "메세지를 입력하세요"
 //        chatTextView.delegate = self
         chatTextView.text = placeholder
+        chatTextView.backgroundColor = .clear
+        chatBackView.backgroundColor = .lightGray.withAlphaComponent(0.1)
+        chatBackView.layer.cornerRadius = 8
         
         
         let xib = UINib(nibName: ChattingTableViewCell.identifier, bundle: nil)
         chatTableView.register(xib, forCellReuseIdentifier: ChattingTableViewCell.identifier)
+        
+        navigationItem.title = chatRoom?.chatroomName
+        
     }
 }
 

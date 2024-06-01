@@ -25,19 +25,25 @@ class ChattingTableViewCell: UITableViewCell {
     func configureUI() {
         profileImage.contentMode = .scaleAspectFill
         
-        profileNameLabel.font = .boldSystemFont(ofSize: 16)
+        profileNameLabel.font = .boldSystemFont(ofSize: 14)
         
         chatLabel.numberOfLines = 0
-        chatLabelBackView.layer.borderColor = UIColor.black.cgColor
+        chatLabel.font = .systemFont(ofSize: 15)
+        
+        chatLabelBackView.layer.borderColor = UIColor.darkGray.cgColor
         chatLabelBackView.layer.borderWidth = 1
-        chatLabelBackView.layer.cornerRadius = 6
+        chatLabelBackView.layer.cornerRadius = 8
         chatLabelBackView.layer.masksToBounds = false
+        chatLabelBackView.backgroundColor = .clear
+        
+        timeLabel.font = .systemFont(ofSize: 12)
+        timeLabel.textColor = .darkGray
     }
 
     func configureCell(chatRoom: ChatRoom, chat: Chat) {
 //        profileImage.image = UIImage(named: chatRoom.chatroomImage.last!)
         profileImage.image = UIImage(named: chat.user.profileImage)
-        profileNameLabel.text = chatRoom.chatroomName
+        profileNameLabel.text = chat.user.rawValue
         
         chatLabel.text = chat.message
         

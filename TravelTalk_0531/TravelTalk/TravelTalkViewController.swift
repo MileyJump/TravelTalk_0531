@@ -37,6 +37,10 @@ class TravelTalkViewController: UIViewController {
         
         travelTalkTableView.dataSource = self
         travelTalkTableView.delegate = self
+        travelTalkTableView.separatorStyle = .none
+        
+        navigationItem.backButtonTitle = ""
+        navigationItem.backBarButtonItem?.tintColor = .black
     }
 }
 
