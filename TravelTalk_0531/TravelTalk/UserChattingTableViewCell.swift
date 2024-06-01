@@ -21,6 +21,7 @@ class UserChattingTableViewCell: UITableViewCell {
     }
     
     func configureUI() {
+        self.selectionStyle = .none
         ChatLabelBackView.configureUIView(borderColorname: UIColor.darkGray.cgColor, borderWidthSize: 1, cornerRadiusSize: 8, backColor: .lightGray.withAlphaComponent(0.3))
         
         chatLabel.numberOfLines = 0

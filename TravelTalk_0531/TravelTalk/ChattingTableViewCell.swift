@@ -23,6 +23,8 @@ class ChattingTableViewCell: UITableViewCell {
     
     
     func configureUI() {
+        
+        self.selectionStyle = .none
         profileImage.contentMode = .scaleAspectFill
         
         profileNameLabel.font = .boldSystemFont(ofSize: 14)

@@ -71,6 +71,7 @@ extension TravelTalkViewController: UITableViewDelegate, UITableViewDataSource {
         vc.chatRoom = mockChatList[indexPath.row]
         vc.chat = chatroom.chatList
         navigationController?.pushViewController(vc, animated: true)
+        tableView.reloadRows(at: [indexPath], with: .none)
     }
     
     
