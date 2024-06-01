@@ -27,6 +27,9 @@ class ChattingViewController: UIViewController {
     }
     
     func configureUI() {
+        
+        navigationController?.navigationBar.tintColor = .black
+        
         chatTableView.dataSource = self
         chatTableView.delegate = self
         chatTableView.separatorStyle = .none

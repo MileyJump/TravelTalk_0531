@@ -40,7 +40,7 @@ class TravelTalkViewController: UIViewController {
         travelTalkTableView.separatorStyle = .none
         
         navigationItem.backButtonTitle = ""
-        navigationItem.backBarButtonItem?.tintColor = .black
+        
     }
 }
 
