@@ -18,6 +18,7 @@ class ChattingViewController: UIViewController {
     
     var chatRoom: ChatRoom?
     var chat: [Chat] = []
+    let placeholder = "메세지를 입력하세요"
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,10 +30,11 @@ class ChattingViewController: UIViewController {
         chatTableView.dataSource = self
         chatTableView.delegate = self
         chatTableView.separatorStyle = .none
-        
-        let placeholder = "메세지를 입력하세요"
-//        chatTextView.delegate = self
+    
+        chatTextView.delegate = self
         chatTextView.text = placeholder
+        chatTextView.textColor = .lightGray
+        
         chatTextView.backgroundColor = .clear
         chatBackView.backgroundColor = .lightGray.withAlphaComponent(0.1)
         chatBackView.layer.cornerRadius = 8
@@ -79,17 +81,21 @@ extension ChattingViewController: UITableViewDelegate, UITableViewDataSource {
     
 }
 
-//extension ChattingViewController: UITextViewDelegate {
-//    func textViewDidBeginEditing(_ textView: UITextView) {
-//        if chatTextView.text.isEmpty {
-//            
-//        } else {
-//            
-//        }
-//    }
-//    
-//    func textViewDidEndEditing(_ textView: UITextView) {
-////        chatTextView.text = placeholder
-//    }
-//    
-//}
+extension ChattingViewController: UITextViewDelegate {
+    func textViewDidBeginEditing(_ textView: UITextView) {
+        
+        if textView.textColor == .lightGray {
+            textView.text = nil
+            textView.textColor = .black
+        }
+    }
+    
+    func textViewDidEndEditing(_ textView: UITextView) {
+        
+        if chatTextView.text.isEmpty {
+            chatTextView.text = placeholder
+            chatTextView.textColor = .lightGray
+        }
+    }
+    
+}
