@@ -45,7 +45,7 @@ class ChattingTableViewCell: UITableViewCell {
         
         chatLabel.text = chat.message
         
-        timeLabel.text = chat.date
+        timeLabel.text = dateFormatConvert(lastDate: chat.date, dateFormat: "MM:dd a")
         
     }
     

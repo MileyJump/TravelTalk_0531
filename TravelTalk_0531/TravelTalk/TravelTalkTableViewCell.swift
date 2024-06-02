@@ -27,12 +27,12 @@ class TravelTalkTableViewCell: UITableViewCell {
     func configureCell(chatRoom: ChatRoom, chat: Chat ) {
         
         profileImageView.image = UIImage(named:chat.user.profileImage )
-        nameLabel.text = chat.user.rawValue
+        profileImageView.image = UIImage(named:chatRoom.chatroomImage[0])
+//        nameLabel.text = chat.user.rawValue
+        nameLabel.text = chatRoom.chatroomName
         contentsLabel.text = chat.message
-//        let dateformatter = DateFormatter()
-//        dateformatter.dateFormat = "yy.MM.dd"
         
-        dateLabel.text = chat.date
+        dateLabel.text = dateFormatConvert(lastDate: chat.date, dateFormat: "YY.MM.dd")
     }
     
     func configureUI() {
@@ -45,6 +45,7 @@ class TravelTalkTableViewCell: UITableViewCell {
         dateLabel.textColor = .lightGray
         
     }
+    
     
     
     

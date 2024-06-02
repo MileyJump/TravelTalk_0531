@@ -13,6 +13,7 @@
 		B07483CC2C0A356600E09147 /* TravelTalkTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B07483C92C0A356500E09147 /* TravelTalkTableViewCell.swift */; };
 		B07483CE2C0A363500E09147 /* ReuseIdentifierProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B07483CD2C0A363500E09147 /* ReuseIdentifierProtocol.swift */; };
 		B07483D12C0B051A00E09147 /* ChattingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B07483D02C0B051A00E09147 /* ChattingViewController.swift */; };
+		B093C4382C0C326900E7684A /* UITableViewCell+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B093C4372C0C326900E7684A /* UITableViewCell+Extension.swift */; };
 		B09809BF2C0A2B790039F399 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B09809BE2C0A2B790039F399 /* AppDelegate.swift */; };
 		B09809C12C0A2B790039F399 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B09809C02C0A2B790039F399 /* SceneDelegate.swift */; };
 		B09809C32C0A2B790039F399 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B09809C22C0A2B790039F399 /* ViewController.swift */; };
@@ -36,6 +37,7 @@
 		B07483CA2C0A356500E09147 /* TravelTalkTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TravelTalkTableViewCell.xib; sourceTree = "<group>"; };
 		B07483CD2C0A363500E09147 /* ReuseIdentifierProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReuseIdentifierProtocol.swift; sourceTree = "<group>"; };
 		B07483D02C0B051A00E09147 /* ChattingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChattingViewController.swift; sourceTree = "<group>"; };
+		B093C4372C0C326900E7684A /* UITableViewCell+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableViewCell+Extension.swift"; sourceTree = "<group>"; };
 		B09809BB2C0A2B790039F399 /* TravelTalk_0531.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TravelTalk_0531.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B09809BE2C0A2B790039F399 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B09809C02C0A2B790039F399 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -69,6 +71,7 @@
 			isa = PBXGroup;
 			children = (
 				B07483CD2C0A363500E09147 /* ReuseIdentifierProtocol.swift */,
+				B093C4372C0C326900E7684A /* UITableViewCell+Extension.swift */,
 				B0A1BC022C0B31F8006E0251 /* UIViewContoller+Extension.swift */,
 				B0A1BC042C0B361D006E0251 /* UIView+Extension.swift */,
 			);
@@ -215,6 +218,7 @@
 				B0A1BC082C0B7971006E0251 /* ChatRoomTableViewCell.swift in Sources */,
 				B0A1BC032C0B31F8006E0251 /* UIViewContoller+Extension.swift in Sources */,
 				B09809D52C0A30DC0039F399 /* TravelTalkViewController.swift in Sources */,
+				B093C4382C0C326900E7684A /* UITableViewCell+Extension.swift in Sources */,
 				B0A1BC052C0B361D006E0251 /* UIView+Extension.swift in Sources */,
 				B09809BF2C0A2B790039F399 /* AppDelegate.swift in Sources */,
 				B0A1BC002C0B2C66006E0251 /* UserChattingTableViewCell.swift in Sources */,

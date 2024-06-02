@@ -34,7 +34,7 @@ class UserChattingTableViewCell: UITableViewCell {
 
     func configureCell(chatRoom: ChatRoom, chat: Chat) {
         
-        timeLabel.text = chat.date
+        timeLabel.text = dateFormatConvert(lastDate: chat.date, dateFormat: "MM:dd a")
         
         chatLabel.text = chat.message
         

@@ -49,7 +49,7 @@ class ChatRoomTableViewCell: UITableViewCell {
         
         userCountLabel.text = String(chatRoom.chatroomImage.count)
         chatLabel.text = chat.message
-        timeLabel.text = chat.date
+        timeLabel.text = dateFormatConvert(lastDate: chat.date, dateFormat: "YY.MM.dd")
         
         let imageName = chatRoom.chatroomImage
         firstProfileImageView.image = UIImage(named: imageName[0])
