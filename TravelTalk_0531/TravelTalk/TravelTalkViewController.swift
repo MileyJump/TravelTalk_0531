@@ -15,6 +15,8 @@ class TravelTalkViewController: UIViewController {
     @IBOutlet var searchTextField: UITextField!
     @IBOutlet var travelTalkTableView: UITableView!
     
+    var filterList: [ChatRoom] = []
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,6 +34,8 @@ class TravelTalkViewController: UIViewController {
         searchTextField.backgroundColor = .clear
         searchTextField.borderStyle = .none
         
+        searchTextField.delegate = self
+        
         // 테이블뷰에 셀 등록
         tableViweRegister(identifier: TravelTalkTableViewCell.identifier, tableName: travelTalkTableView)
         tableViweRegister(identifier: ChatRoomTableViewCell.identifier, tableName: travelTalkTableView)
@@ -40,9 +44,21 @@ class TravelTalkViewController: UIViewController {
         travelTalkTableView.delegate = self
         travelTalkTableView.separatorStyle = .none
         
+        
+        
         navigationItem.backButtonTitle = ""
         
+        filterList = mockChatList
     }
+    
+   
+    
+//    func scrollToRow(indexPath: IndexPath, scrollPosition: UITableView.ScrollPosition, anibated: Bool) {
+//
+//        
+//    }
+    
+    
 }
 
 extension TravelTalkViewController: UITableViewDelegate, UITableViewDataSource {
@@ -52,15 +68,15 @@ extension TravelTalkViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return mockChatList.count
+        return filterList.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let chatroomCount = mockChatList[indexPath.row].chatroomImage.count
+        let chatroomCount = filterList[indexPath.row].chatroomImage.count
           if chatroomCount > 1 {
               let roomCell = tableView.dequeueReusableCell(withIdentifier: ChatRoomTableViewCell.identifier, for: indexPath) as! ChatRoomTableViewCell
               
-              let chatRoom = mockChatList[indexPath.row]
+              let chatRoom = filterList[indexPath.row]
               guard let chatData = chatRoom.chatList.last else { return roomCell }
               roomCell.configureCell(chatRoom: chatRoom, chat: chatData)
               
@@ -69,11 +85,12 @@ extension TravelTalkViewController: UITableViewDelegate, UITableViewDataSource {
               return roomCell
           } else {
               let chatCell = tableView.dequeueReusableCell(withIdentifier: TravelTalkTableViewCell.identifier, for: indexPath) as! TravelTalkTableViewCell
-              let chatRoom = mockChatList[indexPath.row]
+              let chatRoom = filterList[indexPath.row]
               guard let lastChat = chatRoom.chatList.last else { return chatCell }
               chatCell.configureCell(chatRoom: chatRoom, chat: lastChat)
               chatCell.selectionStyle = .none // 셀 선택 시 회색 하이라이트 제거
-              // userCell을 설정하는 추가 코드
+              
+              
               return chatCell
           }
       }
@@ -95,4 +112,30 @@ extension TravelTalkViewController: UITableViewDelegate, UITableViewDataSource {
     
     
     
+}
+
+
+extension TravelTalkViewController: UITextFieldDelegate {
+    func textFieldDidChangeSelection(_ textField: UITextField) {
+        
+        guard let text = textField.text else { return }
+        
+        if text.isEmpty {
+            filterList = mockChatList
+            travelTalkTableView.reloadData()
+            print("안돼?")
+        } else {
+            var filterName: [ChatRoom] = []
+            for filter in filterList {
+                if filter.chatroomName.contains(text) {
+                    filterName.append(filter)
+                    print("돼?")
+                }
+            }
+            filterList = filterName
+            travelTalkTableView.reloadData()
+           
+        }
+        
+    }
 }

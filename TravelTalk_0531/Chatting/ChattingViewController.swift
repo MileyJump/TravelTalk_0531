@@ -23,7 +23,19 @@ class ChattingViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configureUI()
-        
+        scrollToBottom()
+    }
+    
+    func scrollToBottom() {
+        guard let chatRoom = chatRoom else { return }
+        // 마지막 셀인지 확인 후 로드
+        let lastRowIndex = chatRoom.chatList.count - 1
+        if lastRowIndex >= 0 {
+            let indexPath = IndexPath(row: lastRowIndex, section: 0)
+            DispatchQueue.main.async { // 큐에 추가된 작업이 현재 실행 중인 모든 작업이 완료된 후 실행
+                self.chatTableView.scrollToRow(at: indexPath, at: .bottom, animated: false )
+            }
+        }
     }
     
     func configureUI() {
@@ -73,6 +85,18 @@ extension ChattingViewController: UITableViewDelegate, UITableViewDataSource {
             let cell = tableView.dequeueReusableCell(withIdentifier: ChattingTableViewCell.identifier, for: indexPath) as! ChattingTableViewCell
             guard let chatRoom = chatRoom else { return cell }
             cell.configureCell(chatRoom: chatRoom, chat: chat[indexPath.row])
+            
+            
+            
+            
+            
+//            // 마지막 셀인지 확인하여 스크롤
+//                    if indexPath.row == chatRoom.chatList.count - 1 {
+//                        DispatchQueue.main.async {
+//                            let indexPath = IndexPath(row: chatRoom.chatList.count - 1, section: 0)
+//                            self.chatTableView.scrollToRow(at: indexPath, at: .bottom, animated: true)
+//                        }
+//                    }
             
             return cell
         }
