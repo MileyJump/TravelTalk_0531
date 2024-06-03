@@ -82,7 +82,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="tpj-lO-c1m">
-                                <rect key="frame" x="0.0" y="103" width="393" height="655"/>
+                                <rect key="frame" x="0.0" y="103" width="393" height="659"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XPM-9D-0vW">
@@ -92,7 +92,7 @@
                                         <rect key="frame" x="8" y="8" width="312" height="40"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="40" id="Iuz-YE-gbf"/>
+                                            <constraint firstAttribute="height" constant="40" id="kpc-Jx-Cu6"/>
                                         </constraints>
                                         <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                         <color key="textColor" systemColor="labelColor"/>
@@ -102,6 +102,8 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eKn-Af-Wly">
                                         <rect key="frame" x="320" y="15" width="25" height="25"/>
                                         <constraints>
+                                            <constraint firstAttribute="width" constant="25" id="2kS-oR-0f9"/>
+                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="25" id="O5B-Vy-ZGb"/>
                                             <constraint firstAttribute="width" secondItem="eKn-Af-Wly" secondAttribute="height" id="dng-bn-cne"/>
                                             <constraint firstAttribute="height" constant="25" id="vER-bk-U0A"/>
                                         </constraints>
@@ -112,13 +114,13 @@
                                 </subviews>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="eKn-Af-Wly" secondAttribute="trailing" constant="4" id="08z-zN-Jh2"/>
+                                    <constraint firstItem="MTr-z4-YOb" firstAttribute="top" secondItem="XPM-9D-0vW" secondAttribute="top" constant="8" id="6Ha-aM-xPF"/>
                                     <constraint firstItem="eKn-Af-Wly" firstAttribute="leading" secondItem="MTr-z4-YOb" secondAttribute="trailing" id="88X-1e-prx"/>
-                                    <constraint firstItem="MTr-z4-YOb" firstAttribute="leading" secondItem="XPM-9D-0vW" secondAttribute="leading" constant="8" id="EKJ-LR-uk2"/>
-                                    <constraint firstItem="MTr-z4-YOb" firstAttribute="centerY" secondItem="XPM-9D-0vW" secondAttribute="centerY" id="LBE-fc-CXh"/>
-                                    <constraint firstAttribute="bottom" secondItem="eKn-Af-Wly" secondAttribute="bottom" constant="16" id="Pqg-EX-xt7"/>
-                                    <constraint firstItem="MTr-z4-YOb" firstAttribute="top" secondItem="XPM-9D-0vW" secondAttribute="top" constant="8" id="f8x-K1-S8B"/>
-                                    <constraint firstAttribute="bottom" secondItem="MTr-z4-YOb" secondAttribute="bottom" constant="8" id="k2l-fO-ePs"/>
+                                    <constraint firstItem="eKn-Af-Wly" firstAttribute="leading" secondItem="MTr-z4-YOb" secondAttribute="trailing" id="CSs-gz-9F5"/>
+                                    <constraint firstAttribute="bottom" secondItem="MTr-z4-YOb" secondAttribute="bottom" constant="8" id="dhr-et-AwX"/>
+                                    <constraint firstItem="MTr-z4-YOb" firstAttribute="leading" secondItem="XPM-9D-0vW" secondAttribute="leading" constant="8" id="rIw-Lf-0gJ"/>
+                                    <constraint firstAttribute="bottom" secondItem="eKn-Af-Wly" secondAttribute="bottom" constant="16" id="rh5-5M-x4i"/>
+                                    <constraint firstAttribute="trailing" secondItem="eKn-Af-Wly" secondAttribute="trailing" constant="4" id="yeE-gX-CCr"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -126,12 +128,15 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="XPn-X9-053" firstAttribute="trailing" secondItem="tpj-lO-c1m" secondAttribute="trailing" id="0xT-4i-IUq"/>
-                            <constraint firstItem="XPM-9D-0vW" firstAttribute="top" secondItem="tpj-lO-c1m" secondAttribute="bottom" constant="8" id="22K-zM-tzN"/>
-                            <constraint firstItem="XPM-9D-0vW" firstAttribute="leading" secondItem="XPn-X9-053" secondAttribute="leading" constant="22" id="Fgr-o4-rb3"/>
-                            <constraint firstAttribute="bottom" secondItem="XPM-9D-0vW" secondAttribute="bottom" constant="30" id="IMf-Zl-uZa"/>
+                            <constraint firstAttribute="bottom" secondItem="XPM-9D-0vW" secondAttribute="bottom" constant="30" id="68d-IU-0TL"/>
+                            <constraint firstItem="XPn-X9-053" firstAttribute="trailing" secondItem="XPM-9D-0vW" secondAttribute="trailing" constant="22" id="Aig-tE-yca"/>
+                            <constraint firstItem="tpj-lO-c1m" firstAttribute="trailing" secondItem="XPn-X9-053" secondAttribute="trailing" id="GTf-nP-H3P"/>
                             <constraint firstItem="tpj-lO-c1m" firstAttribute="leading" secondItem="XPn-X9-053" secondAttribute="leading" id="MeJ-7R-prU"/>
+                            <constraint firstItem="XPM-9D-0vW" firstAttribute="top" secondItem="tpj-lO-c1m" secondAttribute="bottom" constant="4" id="Oya-jq-mX5"/>
                             <constraint firstItem="tpj-lO-c1m" firstAttribute="top" secondItem="XPn-X9-053" secondAttribute="top" id="Y22-r4-sEw"/>
-                            <constraint firstItem="XPn-X9-053" firstAttribute="trailing" secondItem="XPM-9D-0vW" secondAttribute="trailing" constant="22" id="hSv-F9-kfI"/>
+                            <constraint firstItem="tpj-lO-c1m" firstAttribute="top" secondItem="XPn-X9-053" secondAttribute="top" id="knJ-0O-jZh"/>
+                            <constraint firstItem="XPM-9D-0vW" firstAttribute="leading" secondItem="XPn-X9-053" secondAttribute="leading" constant="22" id="pUs-Bn-C85"/>
+                            <constraint firstItem="tpj-lO-c1m" firstAttribute="leading" secondItem="XPn-X9-053" secondAttribute="leading" id="pq0-2K-p0K"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="XKi-oG-7am"/>

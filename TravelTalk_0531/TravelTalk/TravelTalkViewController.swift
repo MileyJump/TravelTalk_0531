@@ -50,15 +50,6 @@ class TravelTalkViewController: UIViewController {
         
         filterList = mockChatList
     }
-    
-   
-    
-//    func scrollToRow(indexPath: IndexPath, scrollPosition: UITableView.ScrollPosition, anibated: Bool) {
-//
-//        
-//    }
-    
-    
 }
 
 extension TravelTalkViewController: UITableViewDelegate, UITableViewDataSource {
